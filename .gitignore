@@ -1,0 +1,71 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Dependency directories
+node_modules/
+
+# Production build
+dist/
+dist-ssr/
+build/
+
+# Vite cache
+.vite/
+
+# Optional npm cache directory
+.npm/
+
+# dotenv environment files
+.env*
+!.env.example  # Keep this to document env variables
+
+# Local override config
+*.local
+
+# System files
+.DS_Store
+Thumbs.db
+
+# IDEs / Editors
+.vscode/
+!.vscode/extensions.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Docker
+docker-compose.override.yml
+docker-compose.dev.yml
+
+# GCP Cloud Build artifacts
+*.tar.gz
+cloudbuild.log
+
+# Kubernetes temp files
+*.yaml.bak
+*.tmp
+
+# Optional: if using Mac or Linux and running scripts
+*.sh~
+
+# Optional: Coverage reports
+coverage/
+lcov-report/
+
+# Optional: Git hooks
+.husky/

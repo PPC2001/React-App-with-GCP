@@ -1,0 +1,16 @@
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'us-west4-docker.pkg.dev/YOUR_PROJECT_ID/react-app/$ENV_NAME:latest', '.']
+
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'us-west4-docker.pkg.dev/YOUR_PROJECT_ID/react-app/$ENV_NAME:latest']
+
+  - name: 'gcr.io/cloud-builders/kubectl'
+    args: ['apply', '-f', 'deploy/$ENV_NAME/deployment.yaml']
+    env:
+      - 'CLOUDSDK_COMPUTE_REGION=us-west4'
+      - 'CLOUDSDK_COMPUTE_ZONE=us-west4-c'
+      - 'CLOUDSDK_CONTAINER_CLUSTER=YOUR_CLUSTER_NAME'
+
+images:
+  - 'us-west4-docker.pkg.dev/YOUR_PROJECT_ID/react-app/$ENV_NAME:latest'
